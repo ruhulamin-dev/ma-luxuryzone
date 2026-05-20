@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 border border-gold/20 backdrop-blur-sm;
+  }
+  .section-tag {
+    @apply flex items-center gap-4 mb-4;
+  }
+  .section-tag::before,
+  .section-tag::after {
+    content: '';
+    @apply flex-1 h-px bg-gold/20 max-w-[60px];
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, #c9a96e 0%, #8b6914 100%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-wa {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 4px 30px rgba(37, 211, 102, 0.7),
+      0 0 0 10px rgba(37, 211, 102, 0.1);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+.animate-orbit-reverse {
+  animation: orbit 12s linear infinite reverse;
+}
+.animate-pulse-wa {
+  animation: pulse-wa 2.5s ease-in-out infinite;
+}
