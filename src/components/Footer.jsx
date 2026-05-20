@@ -36,7 +36,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://instagram.com/mafragrance"
+              href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
               title="Instagram"
@@ -65,7 +65,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://tiktok.com/@mafragrance"
+              href="https://www.tiktok.com/@m.a.fragrance6"
               target="_blank"
               rel="noreferrer"
               title="TikTok"
