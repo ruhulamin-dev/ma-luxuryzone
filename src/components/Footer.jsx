@@ -13,11 +13,16 @@ export default function Footer() {
             onClick={() => scrollTo('home')}
             className="bg-transparent border-none cursor-pointer p-0"
           >
-            <img
-              src="/logo.png"
-              alt="MA Fragrance"
-              className="h-16 w-16 object-cover rounded-full border-2 border-gold/40 mt-1"
-            />
+            <div className="flex items-center">
+              <img
+                src="/logo.png"
+                alt="MA Fragrance"
+                className="h-16 w-16 object-cover rounded-full border-2 border-gold/40"
+              />
+              <div className="font-cormorant text-gold/80 text-lg font-semibold tracking-[3px] uppercase leading-tight ml-3">
+                MA Fragrance
+              </div>
+            </div>
           </button>
           <p className="text-[12px] text-white/35 leading-[1.9] max-w-[280px] mb-6">
             Premium Dubai fragrances delivered to your door across Bangladesh.
@@ -170,7 +175,7 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto pt-6 border-t border-gold/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/20 text-center">
         <div>
-          © 2025 <span className="text-gold">MA Fragrance</span>. All rights
+          © 2026 <span className="text-gold">MA Fragrance</span>. All rights
           reserved.
         </div>
         <div>Sylhet Sadar, 3100, Bangladesh</div>
