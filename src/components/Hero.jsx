@@ -85,52 +85,139 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="relative flex items-center justify-center h-[300px] sm:h-[400px] lg:h-[520px] order-1 lg:order-2"
+          className="relative flex items-center justify-center order-1 lg:order-2 h-[260px] sm:h-[400px] lg:h-[520px]"
         >
-          <div className="absolute w-[280px] sm:w-[380px] lg:w-[440px] h-[280px] sm:h-[380px] lg:h-[440px] border border-gold/[0.08] rounded-full animate-orbit">
+          {/* Outer circle */}
+          <div className="absolute w-[220px] h-[220px] sm:w-[380px] sm:h-[380px] lg:w-[440px] lg:h-[440px] border border-gold/[0.08] rounded-full animate-orbit">
             <div
               className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 w-2 h-2 bg-gold rounded-full"
               style={{ boxShadow: '0 0 10px #C9A96E' }}
             />
           </div>
-          <div className="absolute w-[200px] sm:w-[280px] lg:w-[320px] h-[200px] sm:h-[280px] lg:h-[320px] border border-dashed border-gold/[0.05] rounded-full animate-orbit-reverse" />
+
+          {/* Inner circle */}
+          <div className="absolute w-[155px] h-[155px] sm:w-[280px] sm:h-[280px] lg:w-[320px] lg:h-[320px] border border-dashed border-gold/[0.05] rounded-full animate-orbit-reverse" />
+
+          {/* Glow */}
           <div
-            className="absolute w-[200px] h-[200px] rounded-full"
+            className="absolute rounded-full"
             style={{
+              width: '155px',
+              height: '155px',
               background:
                 'radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%)',
             }}
           />
 
-          <div className="animate-float flex flex-col items-center relative z-10 scale-75 sm:scale-90 lg:scale-100">
-            <div
-              className="w-9 h-10 rounded-t"
-              style={{
-                background:
-                  'linear-gradient(135deg, #C9A96E, #8B6914, #C9A96E)',
-                boxShadow: '0 -2px 10px rgba(201,169,110,0.3)',
-              }}
-            />
-            <div className="w-7 h-7 bg-[#1a1a1a] border border-gold/30" />
-            <div
-              className="w-36 h-[280px] flex flex-col items-center justify-center gap-3 relative overflow-hidden"
-              style={{
-                background:
-                  'linear-gradient(135deg, rgba(201,169,110,0.12) 0%, rgba(30,25,10,0.92) 40%, rgba(201,169,110,0.06) 70%, rgba(201,169,110,0.18) 100%)',
-                border: '1px solid rgba(201,169,110,0.4)',
-                boxShadow:
-                  '0 20px 60px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.1)',
-              }}
-            >
-              <div className="font-cormorant text-3xl font-semibold text-gold tracking-[3px]">
-                MA
+          {/* Bottle */}
+          <div
+            className="animate-float flex flex-col items-center"
+            style={{ position: 'relative', zIndex: 1 }}
+          >
+            {/* Mobile bottle */}
+            <div className="flex flex-col items-center sm:hidden">
+              <div
+                style={{
+                  width: '24px',
+                  height: '28px',
+                  borderRadius: '4px 4px 0 0',
+                  background:
+                    'linear-gradient(135deg, #C9A96E, #8B6914, #C9A96E)',
+                  boxShadow: '0 -2px 10px rgba(201,169,110,0.3)',
+                }}
+              />
+              <div
+                style={{
+                  width: '18px',
+                  height: '18px',
+                  background: '#1a1a1a',
+                  border: '1px solid rgba(201,169,110,0.3)',
+                }}
+              />
+              <div
+                style={{
+                  width: '80px',
+                  height: '120px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  background:
+                    'linear-gradient(135deg, rgba(201,169,110,0.12) 0%, rgba(30,25,10,0.92) 40%, rgba(201,169,110,0.06) 70%, rgba(201,169,110,0.18) 100%)',
+                  border: '1px solid rgba(201,169,110,0.4)',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.8)',
+                }}
+              >
+                <div
+                  className="font-cormorant font-semibold text-gold"
+                  style={{ fontSize: '18px', letterSpacing: '3px' }}
+                >
+                  MA
+                </div>
+                <div
+                  style={{
+                    width: '60%',
+                    height: '1px',
+                    background: 'rgba(201,169,110,0.2)',
+                  }}
+                />
+                <div
+                  style={{
+                    fontSize: '6px',
+                    letterSpacing: '3px',
+                    color: 'rgba(201,169,110,0.6)',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Fragrance
+                </div>
+                <div
+                  style={{
+                    fontSize: '5px',
+                    letterSpacing: '2px',
+                    color: 'rgba(201,169,110,0.4)',
+                    textTransform: 'uppercase',
+                    textAlign: 'center',
+                  }}
+                >
+                  Dubai Collection
+                </div>
               </div>
-              <div className="w-3/5 h-px bg-gold/20" />
-              <div className="text-[8px] tracking-[4px] text-gold/60 uppercase text-center">
-                Fragrance
-              </div>
-              <div className="text-[7px] tracking-[3px] text-gold/40 uppercase text-center mt-1">
-                Dubai Collection
+            </div>
+
+            {/* Tablet & Laptop bottle */}
+            <div className="hidden sm:flex flex-col items-center">
+              <div
+                className="w-9 h-10 rounded-t"
+                style={{
+                  background:
+                    'linear-gradient(135deg, #C9A96E, #8B6914, #C9A96E)',
+                  boxShadow: '0 -2px 10px rgba(201,169,110,0.3)',
+                }}
+              />
+              <div className="w-7 h-7 bg-[#1a1a1a] border border-gold/30" />
+              <div
+                className="w-36 lg:w-36 flex flex-col items-center justify-center gap-3 relative overflow-hidden"
+                style={{
+                  height: '240px',
+                  background:
+                    'linear-gradient(135deg, rgba(201,169,110,0.12) 0%, rgba(30,25,10,0.92) 40%, rgba(201,169,110,0.06) 70%, rgba(201,169,110,0.18) 100%)',
+                  border: '1px solid rgba(201,169,110,0.4)',
+                  boxShadow:
+                    '0 20px 60px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.1)',
+                }}
+              >
+                <div className="font-cormorant text-3xl font-semibold text-gold tracking-[3px]">
+                  MA
+                </div>
+                <div className="w-3/5 h-px bg-gold/20" />
+                <div className="text-[8px] tracking-[4px] text-gold/60 uppercase text-center">
+                  Fragrance
+                </div>
+                <div className="text-[7px] tracking-[3px] text-gold/40 uppercase text-center mt-1">
+                  Dubai Collection
+                </div>
               </div>
             </div>
           </div>

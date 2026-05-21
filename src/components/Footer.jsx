@@ -41,7 +41,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/m.a_fragrance0"
               target="_blank"
               rel="noreferrer"
               title="Instagram"

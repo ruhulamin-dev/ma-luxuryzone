@@ -42,7 +42,7 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="fixed top-0 left-0 right-0 z-[999]"
+        className="fixed top-0 left-0 right-0 z-[9999]"
       >
         {/* Top gold line */}
         <div
@@ -77,7 +77,7 @@ export default function Navbar() {
                 }`}
               />
 
-              <div className="hidden sm:block text-right">
+              <div className="hidden sm:block text-left">
                 <div className="font-cormorant text-gold/80 text-lg font-semibold tracking-[3px] uppercase leading-tight">
                   MA Fragrance
                 </div>
