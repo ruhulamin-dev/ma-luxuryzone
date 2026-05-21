@@ -288,7 +288,7 @@ function ProductCard({ product }) {
               </div>
             </div>
             <motion.a
-              href={`https://wa.me/8801302630223?text=আসসালামু আলাইকুম। আমি ${product.name} (${product.sizes[selectedSize].label}) ৳ ${product.sizes[selectedSize].price} অর্ডার করতে চাই। ধন্যবাদ!`}
+              href={`https://wa.me/8801302630223?text=আসসালামু আলাইকুম। আমি ${product.name} (${product.sizes[selectedSize].label}) ${product.sizes[selectedSize].price} অর্ডার করতে চাই। ধন্যবাদ!`}
               target="_blank"
               rel="noreferrer"
               whileHover={{ scale: 1.03 }}
