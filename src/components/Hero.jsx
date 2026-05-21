@@ -174,8 +174,8 @@ export default function Hero() {
                 </div>
                 <div
                   style={{
-                    fontSize: '5px',
-                    letterSpacing: '2px',
+                    fontSize: '4px',
+                    letterSpacing: '1.5px',
                     color: 'rgba(201,169,110,0.4)',
                     textTransform: 'uppercase',
                     textAlign: 'center',
