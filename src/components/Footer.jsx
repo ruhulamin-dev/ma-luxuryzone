@@ -15,12 +15,12 @@ export default function Footer() {
           >
             <div className="flex items-center">
               <img
-                src="/logo.png"
+                src="/m.afragrance.jpeg"
                 alt="MA Fragrance"
                 className="h-16 w-16 object-cover rounded-full border-2 border-gold/40"
               />
               <div className="font-cormorant text-gold/80 text-lg font-semibold tracking-[3px] uppercase leading-tight ml-3">
-                MA Fragrance
+                M.A Fragrance
               </div>
             </div>
           </button>
@@ -30,7 +30,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-3">
             <a
-              href="https://www.facebook.com/profile.php?id=61589841419988"
+              href="https://www.facebook.com/m.afragrancebd/"
               target="_blank"
               rel="noreferrer"
               title="Facebook"
@@ -41,7 +41,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/m.a_fragrance0"
+              href="https://www.instagram.com/mafragrancebd"
               target="_blank"
               rel="noreferrer"
               title="Instagram"
@@ -70,7 +70,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.tiktok.com/@m.a.fragrance6"
+              href="https://www.tiktok.com/@mafragrancebd1"
               target="_blank"
               rel="noreferrer"
               title="TikTok"
@@ -175,7 +175,7 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto pt-6 border-t border-gold/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/20 text-center">
         <div>
-          © 2026 <span className="text-gold">MA Fragrance</span>. All rights
+          © 2026 <span className="text-gold">M.A Fragrance</span>. All rights
           reserved.
         </div>
         <div>Sylhet Sadar, 3100, Bangladesh</div>

@@ -39,7 +39,7 @@ export default function WhyChooseUs() {
         </div>
 
         <h2 className="font-cormorant font-light text-3xl sm:text-4xl lg:text-6xl text-center text-white mb-10 sm:mb-14 lg:mb-16">
-          The MA <em className="text-gold not-italic">Difference</em>
+          The M.A <em className="text-gold not-italic">Difference</em>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">

@@ -70,7 +70,7 @@ export default function Navbar() {
               className="bg-transparent border-none cursor-pointer p-0 flex items-center gap-3"
             >
               <img
-                src="/logo.png"
+                src="/m.afragrance.jpeg"
                 alt="MA Fragrance"
                 className={`object-cover rounded-full border border-yellow-500/50 transition-all duration-500 ${
                   scrolled ? 'h-12 w-12' : 'h-16 w-16'
@@ -79,7 +79,7 @@ export default function Navbar() {
 
               <div className="hidden sm:block text-left">
                 <div className="font-cormorant text-gold/80 text-lg font-semibold tracking-[3px] uppercase leading-tight">
-                  MA Fragrance
+                  M.A Fragrance
                 </div>
               </div>
             </button>
