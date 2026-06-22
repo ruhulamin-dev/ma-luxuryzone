@@ -95,9 +95,9 @@ const shoes = [
     name: 'Louis Vuitton',
     images: ['/shoe12-img1.png', '/shoe12-img2.png'],
     sizes: [
-      { label: 'EUR 40', price: '৳4,500' },
-      { label: 'EUR 42', price: '৳4,500' },
-      { label: 'EUR 44', price: '৳4,500' },
+      { label: 'EUR 40', price: '৳4,800' },
+      { label: 'EUR 42', price: '৳4,800' },
+      { label: 'EUR 44', price: '৳4,800' },
     ],
   },
   {
@@ -105,9 +105,9 @@ const shoes = [
     name: 'Louis Vuitton',
     images: ['/shoe13-img1.png', '/shoe13-img2.png'],
     sizes: [
-      { label: 'EUR 40', price: '৳4,500' },
-      { label: 'EUR 41', price: '৳4,500' },
-      { label: 'EUR 43', price: '৳4,500' },
+      { label: 'EUR 40', price: '৳4,800' },
+      { label: 'EUR 41', price: '৳4,800' },
+      { label: 'EUR 43', price: '৳4,800' },
     ],
   },
   {
@@ -115,11 +115,11 @@ const shoes = [
     name: 'Louis Vuitton',
     images: ['/shoe14-img1.png', '/shoe14-img2.png'],
     sizes: [
-      { label: 'EUR 40', price: '৳4,500' },
-      { label: 'EUR 41', price: '৳4,500' },
-      { label: 'EUR 42', price: '৳4,500' },
-      { label: 'EUR 43', price: '৳4,500' },
-      { label: 'EUR 44', price: '৳4,500' },
+      { label: 'EUR 40', price: '৳4,800' },
+      { label: 'EUR 41', price: '৳4,800' },
+      { label: 'EUR 42', price: '৳4,800' },
+      { label: 'EUR 43', price: '৳4,800' },
+      { label: 'EUR 44', price: '৳4,800' },
     ],
   },
   {
