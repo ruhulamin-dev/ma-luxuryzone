@@ -97,7 +97,7 @@ export default function Reviews() {
         </div>
 
         <h2 className="font-cormorant font-light text-3xl sm:text-4xl lg:text-6xl text-center text-white mb-4">
-          What Our <em className="text-gold not-italic">Customers Say</em>
+          What Our Customers Say
         </h2>
 
         <p className="text-center text-[12px] text-white/35 tracking-[1px] mb-10 sm:mb-14">

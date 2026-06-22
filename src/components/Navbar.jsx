@@ -1,39 +1,39 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const links = [
-  { label: 'Home', id: 'home' },
-  { label: 'Products', id: 'products' },
-  { label: 'About', id: 'about' },
-  { label: 'Contact', id: 'contact' },
+  { label: 'Home', path: '/' },
+  { label: 'Perfumes', path: '/perfumes' },
+  { label: 'Shoes', path: '/shoes' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', onScroll);
-
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
   }, []);
 
-  const scrollTo = id => {
+  const goHome = () => {
     setMenuOpen(false);
-    setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) {
-        const offset = 100;
-        const top = el.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    }, 300);
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const goTo = path => {
+    setMenuOpen(false);
+    navigate(path);
   };
 
   return (
@@ -66,12 +66,12 @@ export default function Navbar() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 flex items-center justify-between">
             {/* Logo */}
             <button
-              onClick={() => scrollTo('home')}
+              onClick={goHome}
               className="bg-transparent border-none cursor-pointer p-0 flex items-center gap-3"
             >
               <img
-                src="/m.afragrance.jpeg"
-                alt="MA Fragrance"
+                src="/m.aluxuryzone.jpg"
+                alt="M.A Luxury Zone"
                 className={`object-cover rounded-full border border-yellow-500/50 transition-all duration-500 ${
                   scrolled ? 'h-12 w-12' : 'h-16 w-16'
                 }`}
@@ -79,7 +79,7 @@ export default function Navbar() {
 
               <div className="hidden sm:block text-left">
                 <div className="font-cormorant text-gold/80 text-lg font-semibold tracking-[3px] uppercase leading-tight">
-                  M.A Fragrance
+                  M.A Luxury Zone
                 </div>
               </div>
             </button>
@@ -110,19 +110,28 @@ export default function Navbar() {
             {/* Desktop Menu */}
             <ul className="hidden md:flex items-center gap-1 list-none m-0 p-0">
               {links.map(link => (
-                <li key={link.id}>
-                  <a
-                    href={`/#${link.id}`}
-                    onClick={e => {
-                      e.preventDefault();
-                      scrollTo(link.id);
-                    }}
-                    className="relative block px-4 py-2 text-[11px] lg:text-[12px] tracking-[2.5px] uppercase font-semibold text-white/65 hover:text-gold/70 transition-all duration-300 no-underline group"
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    onClick={() => setMenuOpen(false)}
+                    className={
+                      'relative block px-4 py-2 text-[11px] lg:text-[12px] tracking-[2.5px] uppercase font-semibold transition-all duration-300 no-underline group ' +
+                      (location.pathname === link.path
+                        ? 'text-gold'
+                        : 'text-white/65 hover:text-gold/70')
+                    }
                   >
                     {link.label}
 
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-yellow-400 group-hover:w-3/4 transition-all duration-300" />
-                  </a>
+                    <span
+                      className={
+                        'absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-yellow-400 transition-all duration-300 ' +
+                        (location.pathname === link.path
+                          ? 'w-3/4'
+                          : 'w-0 group-hover:w-3/4')
+                      }
+                    />
+                  </Link>
                 </li>
               ))}
 
@@ -202,23 +211,25 @@ export default function Navbar() {
               <ul className="list-none m-0 px-6 py-6 flex flex-col gap-1">
                 {links.map((link, i) => (
                   <motion.li
-                    key={link.id}
+                    key={link.path}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.08 }}
                   >
-                    <a
-                      href={`/#${link.id}`}
-                      onClick={e => {
-                        e.preventDefault();
-                        scrollTo(link.id);
-                      }}
-                      className="flex items-center gap-3 py-3 text-[12px] tracking-[3px] uppercase font-semibold text-white/70 hover:text-yellow-400 transition-colors duration-300 no-underline border-b border-yellow-500/[0.08]"
+                    <Link
+                      to={link.path}
+                      onClick={() => setMenuOpen(false)}
+                      className={
+                        'flex items-center gap-3 py-3 text-[12px] tracking-[3px] uppercase font-semibold transition-colors duration-300 no-underline border-b border-yellow-500/[0.08] ' +
+                        (location.pathname === link.path
+                          ? 'text-yellow-400'
+                          : 'text-white/70 hover:text-yellow-400')
+                      }
                     >
                       <span className="text-yellow-500/40 text-[8px]">◆</span>
 
                       {link.label}
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
 

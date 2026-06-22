@@ -1,7 +1,11 @@
+import { Link, useNavigate } from 'react-router-dom';
+
 export default function Footer() {
-  const scrollTo = id => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  const navigate = useNavigate();
+
+  const goHome = () => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -10,27 +14,28 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <button
-            onClick={() => scrollTo('home')}
+            onClick={goHome}
             className="bg-transparent border-none cursor-pointer p-0"
           >
             <div className="flex items-center">
               <img
-                src="/m.afragrance.jpeg"
-                alt="MA Fragrance"
+                src="/m.aluxuryzone.jpg"
+                alt="M.A Luxury Zone"
                 className="h-16 w-16 object-cover rounded-full border-2 border-gold/40"
               />
               <div className="font-cormorant text-gold/80 text-lg font-semibold tracking-[3px] uppercase leading-tight ml-3">
-                M.A Fragrance
+                M.A Luxury Zone
               </div>
             </div>
           </button>
-          <p className="text-[12px] text-white/35 leading-[1.9] max-w-[280px] mb-6">
-            Premium Dubai fragrances delivered to your door across Bangladesh.
-            Elegance, confidence, authenticity.
+          <p className="text-[12px] text-white/35 leading-[1.9] max-w-[280px] mb-6 mt-4">
+            M.A Luxury Zone brings you authentic Dubai perfumes and premium
+            footwear, delivered across Bangladesh with fast shipping and
+            guaranteed quality.
           </p>
           <div className="flex gap-3">
             <a
-              href="https://www.facebook.com/m.afragrancebd/"
+              href="https://www.facebook.com/profile.php?id=61590907973616"
               target="_blank"
               rel="noreferrer"
               title="Facebook"
@@ -41,7 +46,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/mafragrancebd"
+              href="https://www.instagram.com/m.a_luxury_zone/"
               target="_blank"
               rel="noreferrer"
               title="Instagram"
@@ -90,18 +95,21 @@ export default function Footer() {
           </div>
           <ul className="list-none space-y-3 p-0 m-0">
             {[
-              { label: 'Home', id: 'home' },
-              { label: 'Products', id: 'products' },
-              { label: 'About', id: 'about' },
-              { label: 'Contact', id: 'contact' },
+              { label: 'Home', path: '/' },
+              { label: 'Perfumes', path: '/perfumes' },
+              { label: 'Shoes', path: '/shoes' },
+              { label: 'Contact', path: '/contact' },
             ].map(link => (
-              <li key={link.id}>
-                <button
-                  onClick={() => scrollTo(link.id)}
-                  className="text-[12px] text-white/40 hover:text-gold transition-colors duration-300 bg-transparent border-none cursor-pointer p-0"
+              <li key={link.path}>
+                <Link
+                  to={link.path}
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                  }
+                  className="text-[12px] text-white/40 hover:text-gold transition-colors duration-300 no-underline"
                 >
                   {link.label}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>
@@ -127,7 +135,7 @@ export default function Footer() {
                 <circle cx="12" cy="10" r="3" />
               </svg>
               <span className="text-[12px] text-white/50 leading-relaxed">
-                Sylhet Sadar, 3100
+                Bolaura, Bolaurabazar, Sylhet, Bangladesh, 3100
               </span>
             </div>
             <div className="flex gap-3 items-center">
@@ -163,10 +171,10 @@ export default function Footer() {
                 <polyline points="22,6 12,13 2,6" />
               </svg>
               <a
-                href="mailto:mafragrance80@gmail.com"
+                href="mailto:maluxuryzone@gmail.com"
                 className="text-[12px] text-white/50 hover:text-gold transition-colors no-underline break-all"
               >
-                mafragrance80@gmail.com
+                maluxuryzone@gmail.com
               </a>
             </div>
           </div>
@@ -175,10 +183,10 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto pt-6 border-t border-gold/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/20 text-center">
         <div>
-          © 2026 <span className="text-gold">M.A Fragrance</span>. All rights
+          © 2026 <span className="text-gold">M.A Luxury Zone</span>. All rights
           reserved.
         </div>
-        <div>Sylhet Sadar, 3100, Bangladesh</div>
+        <div>Bolaura, Bolaurabazar, Sylhet, Bangladesh, 3100</div>
       </div>
     </footer>
   );

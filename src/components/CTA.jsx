@@ -33,8 +33,7 @@ export default function CTA() {
         </div>
 
         <h2 className="font-cormorant font-light text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white mb-4">
-          Order Your <em className="text-gold not-italic">Signature Scent</em>{' '}
-          Today
+          Order Your Signature Scent Today
         </h2>
 
         <p className="text-[12px] sm:text-[13px] text-white/45 mb-10 tracking-[0.5px]">

@@ -1,32 +1,32 @@
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Products from './components/Products';
-import WhyChooseUs from './components/WhyChooseUs';
-import Reviews from './components/Reviews';
-import CTA from './components/CTA';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import Home from './pages/Home';
+import Perfumes from './pages/Perfumes';
+import Shoes from './pages/Shoes';
+import Contact from './pages/Contact';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (hash) {
-      setTimeout(() => {
-        const el = document.getElementById(hash.replace('#', ''));
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 500);
-    }
-  }, []);
-
   return (
     <div className="bg-[#0A0A0A] text-white overflow-x-hidden">
+      <ScrollToTop />
       <Navbar />
-      <Hero />
-      <Products />
-      <WhyChooseUs />
-      <Reviews />
-      <CTA />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/perfumes" element={<Perfumes />} />
+        <Route path="/shoes" element={<Shoes />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
       <WhatsAppFloat />
     </div>
