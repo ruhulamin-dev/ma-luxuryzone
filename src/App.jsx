@@ -6,6 +6,8 @@ import WhatsAppFloat from './components/WhatsAppFloat';
 import Home from './pages/Home';
 import Perfumes from './pages/Perfumes';
 import Shoes from './pages/Shoes';
+import MensShoes from './pages/MensShoes';
+import WomensShoes from './pages/WomensShoes';
 import Contact from './pages/Contact';
 
 function ScrollToTop() {
@@ -25,6 +27,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/perfumes" element={<Perfumes />} />
         <Route path="/shoes" element={<Shoes />} />
+        <Route path="/shoes/mens" element={<MensShoes />} />
+        <Route path="/shoes/womens" element={<WomensShoes />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

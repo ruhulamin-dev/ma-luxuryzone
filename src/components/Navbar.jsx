@@ -1,17 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-
-const links = [
-  { label: 'Home', path: '/' },
-  { label: 'Perfumes', path: '/perfumes' },
-  { label: 'Shoes', path: '/shoes' },
-  { label: 'Contact', path: '/contact' },
-];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [shoesOpen, setShoesOpen] = useState(false);
+  const [mobileShoes, setMobileShoes] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -25,16 +20,19 @@ export default function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    setMenuOpen(false);
+    setShoesOpen(false);
+    setMobileShoes(false);
+  }, [location.pathname]);
+
   const goHome = () => {
     setMenuOpen(false);
     navigate('/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const goTo = path => {
-    setMenuOpen(false);
-    navigate(path);
-  };
+  const isShoeActive = location.pathname.startsWith('/shoes');
 
   return (
     <>
@@ -76,7 +74,6 @@ export default function Navbar() {
                   scrolled ? 'h-12 w-12' : 'h-16 w-16'
                 }`}
               />
-
               <div className="hidden sm:block text-left">
                 <div className="font-cormorant text-gold/80 text-lg font-semibold tracking-[3px] uppercase leading-tight">
                   M.A Luxury Zone
@@ -93,11 +90,9 @@ export default function Navbar() {
                     'linear-gradient(90deg, transparent, rgba(201,169,110,0.3))',
                 }}
               />
-
               <div className="mx-3 text-yellow-500/30 text-[8px] tracking-[4px]">
                 ◆
               </div>
-
               <div
                 className="flex-1 h-[1px]"
                 style={{
@@ -109,31 +104,170 @@ export default function Navbar() {
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex items-center gap-1 list-none m-0 p-0">
-              {links.map(link => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    onClick={() => setMenuOpen(false)}
+              {/* Home */}
+              <li>
+                <Link
+                  to="/"
+                  className={
+                    'relative block px-4 py-2 text-[11px] lg:text-[12px] tracking-[2.5px] uppercase font-semibold transition-all duration-300 no-underline group ' +
+                    (location.pathname === '/'
+                      ? 'text-gold'
+                      : 'text-white/65 hover:text-gold/70')
+                  }
+                >
+                  Home
+                  <span
                     className={
-                      'relative block px-4 py-2 text-[11px] lg:text-[12px] tracking-[2.5px] uppercase font-semibold transition-all duration-300 no-underline group ' +
-                      (location.pathname === link.path
-                        ? 'text-gold'
-                        : 'text-white/65 hover:text-gold/70')
+                      'absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-yellow-400 transition-all duration-300 ' +
+                      (location.pathname === '/'
+                        ? 'w-3/4'
+                        : 'w-0 group-hover:w-3/4')
                     }
-                  >
-                    {link.label}
+                  />
+                </Link>
+              </li>
 
-                    <span
-                      className={
-                        'absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-yellow-400 transition-all duration-300 ' +
-                        (location.pathname === link.path
-                          ? 'w-3/4'
-                          : 'w-0 group-hover:w-3/4')
-                      }
-                    />
-                  </Link>
-                </li>
-              ))}
+              {/* Perfumes */}
+              <li>
+                <Link
+                  to="/perfumes"
+                  className={
+                    'relative block px-4 py-2 text-[11px] lg:text-[12px] tracking-[2.5px] uppercase font-semibold transition-all duration-300 no-underline group ' +
+                    (location.pathname === '/perfumes'
+                      ? 'text-gold'
+                      : 'text-white/65 hover:text-gold/70')
+                  }
+                >
+                  Perfumes
+                  <span
+                    className={
+                      'absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-yellow-400 transition-all duration-300 ' +
+                      (location.pathname === '/perfumes'
+                        ? 'w-3/4'
+                        : 'w-0 group-hover:w-3/4')
+                    }
+                  />
+                </Link>
+              </li>
+
+              {/* Shoes with Dropdown */}
+              <li
+                className="relative"
+                onMouseEnter={() => setShoesOpen(true)}
+                onMouseLeave={() => setShoesOpen(false)}
+              >
+                <Link
+                  to="/shoes"
+                  className={
+                    'relative flex items-center gap-1 px-4 py-2 text-[11px] lg:text-[12px] tracking-[2.5px] uppercase font-semibold transition-all duration-300 no-underline group ' +
+                    (isShoeActive
+                      ? 'text-gold'
+                      : 'text-white/65 hover:text-gold/70')
+                  }
+                >
+                  Shoes
+                  <svg
+                    className={
+                      'w-3 h-3 transition-transform duration-300 ' +
+                      (shoesOpen ? 'rotate-180' : '')
+                    }
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                  <span
+                    className={
+                      'absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-yellow-400 transition-all duration-300 ' +
+                      (isShoeActive ? 'w-3/4' : 'w-0 group-hover:w-3/4')
+                    }
+                  />
+                </Link>
+
+                {/* Dropdown */}
+                <AnimatePresence>
+                  {shoesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-44 rounded-sm overflow-hidden"
+                      style={{
+                        background: 'rgba(8,8,8,0.98)',
+                        border: '1px solid rgba(201,169,110,0.25)',
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
+                      }}
+                    >
+                      <Link
+                        to="/shoes/mens"
+                        className="flex items-center gap-3 px-5 py-3.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/65 hover:text-gold hover:bg-gold/5 transition-all duration-200 no-underline border-b border-gold/10"
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M3 18c0-2 1-3 3-3h1l4-5h2l5 4c1 1 3 1 3 3v1H3v-1z" />
+                        </svg>
+                        Men's
+                      </Link>
+                      <Link
+                        to="/shoes/womens"
+                        className="flex items-center gap-3 px-5 py-3.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/65 hover:text-gold hover:bg-gold/5 transition-all duration-200 no-underline"
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M12 2a4 4 0 0 1 4 4c0 3-4 8-4 8s-4-5-4-8a4 4 0 0 1 4-4z" />
+                          <line x1="12" y1="14" x2="12" y2="22" />
+                          <line x1="9" y1="19" x2="15" y2="19" />
+                        </svg>
+                        Women's
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </li>
+
+              {/* Contact */}
+              <li>
+                <Link
+                  to="/contact"
+                  className={
+                    'relative block px-4 py-2 text-[11px] lg:text-[12px] tracking-[2.5px] uppercase font-semibold transition-all duration-300 no-underline group ' +
+                    (location.pathname === '/contact'
+                      ? 'text-gold'
+                      : 'text-white/65 hover:text-gold/70')
+                  }
+                >
+                  Contact
+                  <span
+                    className={
+                      'absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-yellow-400 transition-all duration-300 ' +
+                      (location.pathname === '/contact'
+                        ? 'w-3/4'
+                        : 'w-0 group-hover:w-3/4')
+                    }
+                  />
+                </Link>
+              </li>
 
               {/* WhatsApp Button */}
               <li className="ml-4">
@@ -170,13 +304,11 @@ export default function Navbar() {
                   menuOpen ? 'w-6 rotate-45 translate-y-[7px]' : 'w-6'
                 }`}
               />
-
               <span
                 className={`block w-6 h-[1.5px] bg-yellow-400 transition-all duration-300 ${
                   menuOpen ? 'opacity-0' : ''
                 }`}
               />
-
               <span
                 className={`block h-[1.5px] bg-yellow-400 transition-all duration-300 ${
                   menuOpen ? 'w-6 -rotate-45 -translate-y-[7px]' : 'w-6'
@@ -209,29 +341,162 @@ export default function Navbar() {
               }}
             >
               <ul className="list-none m-0 px-6 py-6 flex flex-col gap-1">
-                {links.map((link, i) => (
-                  <motion.li
-                    key={link.path}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.08 }}
+                {/* Home */}
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0 }}
+                >
+                  <Link
+                    to="/"
+                    onClick={() => setMenuOpen(false)}
+                    className={
+                      'flex items-center gap-3 py-3 text-[12px] tracking-[3px] uppercase font-semibold transition-colors duration-300 no-underline border-b border-yellow-500/[0.08] ' +
+                      (location.pathname === '/'
+                        ? 'text-yellow-400'
+                        : 'text-white/70 hover:text-yellow-400')
+                    }
                   >
-                    <Link
-                      to={link.path}
-                      onClick={() => setMenuOpen(false)}
-                      className={
-                        'flex items-center gap-3 py-3 text-[12px] tracking-[3px] uppercase font-semibold transition-colors duration-300 no-underline border-b border-yellow-500/[0.08] ' +
-                        (location.pathname === link.path
-                          ? 'text-yellow-400'
-                          : 'text-white/70 hover:text-yellow-400')
-                      }
-                    >
-                      <span className="text-yellow-500/40 text-[8px]">◆</span>
+                    <span className="text-yellow-500/40 text-[8px]">◆</span>
+                    Home
+                  </Link>
+                </motion.li>
 
-                      {link.label}
-                    </Link>
-                  </motion.li>
-                ))}
+                {/* Perfumes */}
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.08 }}
+                >
+                  <Link
+                    to="/perfumes"
+                    onClick={() => setMenuOpen(false)}
+                    className={
+                      'flex items-center gap-3 py-3 text-[12px] tracking-[3px] uppercase font-semibold transition-colors duration-300 no-underline border-b border-yellow-500/[0.08] ' +
+                      (location.pathname === '/perfumes'
+                        ? 'text-yellow-400'
+                        : 'text-white/70 hover:text-yellow-400')
+                    }
+                  >
+                    <span className="text-yellow-500/40 text-[8px]">◆</span>
+                    Perfumes
+                  </Link>
+                </motion.li>
+
+                {/* Shoes — expandable */}
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.16 }}
+                >
+                  <button
+                    onClick={() => setMobileShoes(!mobileShoes)}
+                    className={
+                      'w-full flex items-center justify-between py-3 text-[12px] tracking-[3px] uppercase font-semibold transition-colors duration-300 bg-transparent border-none border-b border-yellow-500/[0.08] cursor-pointer ' +
+                      (isShoeActive ? 'text-yellow-400' : 'text-white/70')
+                    }
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-yellow-500/40 text-[8px]">◆</span>
+                      Shoes
+                    </div>
+                    <svg
+                      className={
+                        'w-3.5 h-3.5 text-gold/50 transition-transform duration-300 ' +
+                        (mobileShoes ? 'rotate-180' : '')
+                      }
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+
+                  <AnimatePresence>
+                    {mobileShoes && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div
+                          className="pl-8 py-2 flex flex-col gap-1"
+                          style={{
+                            borderLeft: '1px solid rgba(201,169,110,0.2)',
+                          }}
+                        >
+                          <Link
+                            to="/shoes/mens"
+                            onClick={() => setMenuOpen(false)}
+                            className="flex items-center gap-2 py-2.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/60 hover:text-yellow-400 transition-colors no-underline"
+                          >
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M3 18c0-2 1-3 3-3h1l4-5h2l5 4c1 1 3 1 3 3v1H3v-1z" />
+                            </svg>
+                            Men's Shoes
+                          </Link>
+                          <Link
+                            to="/shoes/womens"
+                            onClick={() => setMenuOpen(false)}
+                            className="flex items-center gap-2 py-2.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/60 hover:text-yellow-400 transition-colors no-underline"
+                          >
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M12 2a4 4 0 0 1 4 4c0 3-4 8-4 8s-4-5-4-8a4 4 0 0 1 4-4z" />
+                              <line x1="12" y1="14" x2="12" y2="22" />
+                              <line x1="9" y1="19" x2="15" y2="19" />
+                            </svg>
+                            Women's Shoes
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.li>
+
+                {/* Contact */}
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.24 }}
+                >
+                  <Link
+                    to="/contact"
+                    onClick={() => setMenuOpen(false)}
+                    className={
+                      'flex items-center gap-3 py-3 text-[12px] tracking-[3px] uppercase font-semibold transition-colors duration-300 no-underline border-b border-yellow-500/[0.08] ' +
+                      (location.pathname === '/contact'
+                        ? 'text-yellow-400'
+                        : 'text-white/70 hover:text-yellow-400')
+                    }
+                  >
+                    <span className="text-yellow-500/40 text-[8px]">◆</span>
+                    Contact
+                  </Link>
+                </motion.li>
 
                 {/* Mobile WhatsApp */}
                 <li className="pt-4">
