@@ -14,18 +14,18 @@ const reviews = [
     id: 3,
     image: '/review3.jpg',
   },
-  {
-    id: 4,
-    image: '/review4.jpg',
-  },
   // {
-  //   id: 5,
-  //   image: '/review5.jpg',
+  //   id: 4,
+  //   image: '/review4.jpg',
   // },
-  // {
-  //   id: 6,
-  //   image: '/review6.jpg',
-  // },
+  // // {
+  // //   id: 5,
+  // //   image: '/review5.jpg',
+  // // },
+  // // {
+  // //   id: 6,
+  // //   image: '/review6.jpg',
+  // // },
 ];
 
 function ReviewModal({ src, onClose }) {

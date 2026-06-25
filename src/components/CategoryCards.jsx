@@ -7,7 +7,7 @@ const categories = [
     subtitle: 'Authentic Dubai Fragrances',
     desc: 'Authentic Dubai perfumes — long-lasting, affordable luxury.',
     link: '/perfumes',
-    image: '/category-perfume.jpg.png',
+    image: '/category-perfume.jpg',
   },
   {
     title: 'Shoes',
