@@ -152,6 +152,28 @@ const shoes = [
       { label: '40', price: '৳2,000' },
     ],
   },
+  {
+    id: 19,
+    name: 'Nike SB Dunk Low',
+    images: ['/shoe19-img1.jpg', '/shoe19-img2.jpg'],
+    sizes: [
+      { label: '41', price: '৳3,399' },
+      { label: '42', price: '৳3,399' },
+      { label: '43', price: '৳3,399' },
+      { label: '44', price: '৳3,399' },
+    ],
+  },
+  {
+    id: 20,
+    name: 'Nike Air Force 1 Low 07 Triple White',
+    images: ['/shoe20-img1.jpg', '/shoe20-img2.jpg'],
+    sizes: [
+      { label: '41', price: '৳3,299' },
+      { label: '42', price: '৳3,299' },
+      { label: '43', price: '৳3,299' },
+      { label: '44', price: '৳3,299' },
+    ],
+  },
 ];
 
 export default shoes;

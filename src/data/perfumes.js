@@ -139,6 +139,36 @@ const perfumes = [
       { label: '15ML', price: '৳950' },
     ],
   },
+  {
+    id: 15,
+    name: 'Daring Blue for life (Pour Homme)',
+    images: ['/product15-img1.jpg', '/product15-img2.jpg'],
+    sizes: [
+      { label: '6ML', price: '৳250' },
+      { label: '10ML', price: '৳380' },
+      { label: '15ML', price: '৳500' },
+    ],
+  },
+  {
+    id: 16,
+    name: 'Rave Now',
+    images: ['/product16-img1.jpg', '/product16-img2.jpg'],
+    sizes: [
+      { label: '6ML', price: '৳250' },
+      { label: '10ML', price: '৳380' },
+      { label: '15ML', price: '৳500' },
+    ],
+  },
+  {
+    id: 17,
+    name: 'Ramz Lattafa',
+    images: ['/product17-img1.jpg', '/product17-img2.jpg'],
+    sizes: [
+      { label: '6ML', price: '৳250' },
+      { label: '10ML', price: '৳380' },
+      { label: '15ML', price: '৳500' },
+    ],
+  },
 ];
 
 export default perfumes;
