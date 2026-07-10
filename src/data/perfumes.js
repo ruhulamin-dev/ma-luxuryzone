@@ -169,6 +169,16 @@ const perfumes = [
       { label: '15ML', price: '৳500' },
     ],
   },
+  {
+    id: 18,
+    name: 'Reef 33',
+    images: ['/product18-img1.jpg', '/product18-img2.jpg'],
+    sizes: [
+      { label: '6ML', price: '৳420' },
+      { label: '10ML', price: '৳680' },
+      { label: '15ML', price: '৳900' },
+    ],
+  },
 ];
 
 export default perfumes;
