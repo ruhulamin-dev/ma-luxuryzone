@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
@@ -7,6 +7,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [shoesOpen, setShoesOpen] = useState(false);
   const [mobileShoes, setMobileShoes] = useState(false);
+  const [clothingOpen, setClothingOpen] = useState(false);
+  const [mobileClothing, setMobileClothing] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -24,6 +26,8 @@ export default function Navbar() {
     setMenuOpen(false);
     setShoesOpen(false);
     setMobileShoes(false);
+    setClothingOpen(false);
+    setMobileClothing(false);
   }, [location.pathname]);
 
   const goHome = () => {
@@ -33,6 +37,7 @@ export default function Navbar() {
   };
 
   const isShoeActive = location.pathname.startsWith('/shoes');
+  const isClothingActive = location.pathname.startsWith('/clothing');
 
   return (
     <>
@@ -188,7 +193,6 @@ export default function Navbar() {
                   />
                 </Link>
 
-                {/* Dropdown */}
                 <AnimatePresence>
                   {shoesOpen && (
                     <motion.div
@@ -240,6 +244,98 @@ export default function Navbar() {
                           <line x1="9" y1="19" x2="15" y2="19" />
                         </svg>
                         Women's
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </li>
+
+              {/* Clothing with Dropdown */}
+              <li
+                className="relative"
+                onMouseEnter={() => setClothingOpen(true)}
+                onMouseLeave={() => setClothingOpen(false)}
+              >
+                <button
+                  className={
+                    'relative flex items-center gap-1 px-4 py-2 text-[11px] lg:text-[12px] tracking-[2.5px] uppercase font-semibold transition-all duration-300 bg-transparent border-none cursor-pointer group ' +
+                    (isClothingActive
+                      ? 'text-gold'
+                      : 'text-white/65 hover:text-gold/70')
+                  }
+                >
+                  Clothing
+                  <svg
+                    className={
+                      'w-3 h-3 transition-transform duration-300 ' +
+                      (clothingOpen ? 'rotate-180' : '')
+                    }
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                  <span
+                    className={
+                      'absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-yellow-400 transition-all duration-300 ' +
+                      (isClothingActive ? 'w-3/4' : 'w-0 group-hover:w-3/4')
+                    }
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {clothingOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-44 rounded-sm overflow-hidden"
+                      style={{
+                        background: 'rgba(8,8,8,0.98)',
+                        border: '1px solid rgba(201,169,110,0.25)',
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
+                      }}
+                    >
+                      <Link
+                        to="/clothing/shirts"
+                        className="flex items-center gap-3 px-5 py-3.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/65 hover:text-gold hover:bg-gold/5 transition-all duration-200 no-underline border-b border-gold/10"
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M4 4l4-1 4 3 4-3 4 1v4l-3 1v11H7V9L4 8z" />
+                        </svg>
+                        Shirts
+                      </Link>
+                      <Link
+                        to="/clothing/pants"
+                        className="flex items-center gap-3 px-5 py-3.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/65 hover:text-gold hover:bg-gold/5 transition-all duration-200 no-underline"
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M6 3h12l1 5-2 1-1 12h-4l-1-9-1 9H6L5 9l-2-1z" />
+                        </svg>
+                        Pants
                       </Link>
                     </motion.div>
                   )}
@@ -366,7 +462,7 @@ export default function Navbar() {
                 <motion.li
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.08 }}
+                  transition={{ delay: 0.06 }}
                 >
                   <Link
                     to="/perfumes"
@@ -387,7 +483,7 @@ export default function Navbar() {
                 <motion.li
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.16 }}
+                  transition={{ delay: 0.12 }}
                 >
                   <button
                     onClick={() => setMobileShoes(!mobileShoes)}
@@ -470,6 +566,98 @@ export default function Navbar() {
                               <line x1="9" y1="19" x2="15" y2="19" />
                             </svg>
                             Women's Shoes
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.li>
+
+                {/* Clothing — expandable */}
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.18 }}
+                >
+                  <button
+                    onClick={() => setMobileClothing(!mobileClothing)}
+                    className={
+                      'w-full flex items-center justify-between py-3 text-[12px] tracking-[3px] uppercase font-semibold transition-colors duration-300 bg-transparent border-none border-b border-yellow-500/[0.08] cursor-pointer ' +
+                      (isClothingActive ? 'text-yellow-400' : 'text-white/70')
+                    }
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-yellow-500/40 text-[8px]">◆</span>
+                      Clothing
+                    </div>
+                    <svg
+                      className={
+                        'w-3.5 h-3.5 text-gold/50 transition-transform duration-300 ' +
+                        (mobileClothing ? 'rotate-180' : '')
+                      }
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+
+                  <AnimatePresence>
+                    {mobileClothing && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div
+                          className="pl-8 py-2 flex flex-col gap-1"
+                          style={{
+                            borderLeft: '1px solid rgba(201,169,110,0.2)',
+                          }}
+                        >
+                          <Link
+                            to="/clothing/shirts"
+                            onClick={() => setMenuOpen(false)}
+                            className="flex items-center gap-2 py-2.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/60 hover:text-yellow-400 transition-colors no-underline"
+                          >
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M4 4l4-1 4 3 4-3 4 1v4l-3 1v11H7V9L4 8z" />
+                            </svg>
+                            Shirts
+                          </Link>
+                          <Link
+                            to="/clothing/pants"
+                            onClick={() => setMenuOpen(false)}
+                            className="flex items-center gap-2 py-2.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/60 hover:text-yellow-400 transition-colors no-underline"
+                          >
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M6 3h12l1 5-2 1-1 12h-4l-1-9-1 9H6L5 9l-2-1z" />
+                            </svg>
+                            Pants
                           </Link>
                         </div>
                       </motion.div>

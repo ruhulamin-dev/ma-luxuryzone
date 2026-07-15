@@ -8,6 +8,8 @@ import Perfumes from './pages/Perfumes';
 import Shoes from './pages/Shoes';
 import MensShoes from './pages/MensShoes';
 import WomensShoes from './pages/WomensShoes';
+import Shirts from './pages/Shirts';
+import Pants from './pages/Pants';
 import Contact from './pages/Contact';
 
 function ScrollToTop() {
@@ -29,6 +31,8 @@ function App() {
         <Route path="/shoes" element={<Shoes />} />
         <Route path="/shoes/mens" element={<MensShoes />} />
         <Route path="/shoes/womens" element={<WomensShoes />} />
+        <Route path="/clothing/shirts" element={<Shirts />} />
+        <Route path="/clothing/pants" element={<Pants />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
