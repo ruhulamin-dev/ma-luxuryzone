@@ -16,6 +16,13 @@ const categories = [
     link: '/shoes',
     image: '/category-shoe.jpg',
   },
+  {
+    title: 'Clothing',
+    subtitle: 'Shirts & Pants Collection',
+    desc: 'Premium shirts and pants for every occasion.',
+    link: '/clothing',
+    image: '/category-clothing.jpg',
+  },
 ];
 
 export default function CategoryCards() {
@@ -37,7 +44,7 @@ export default function CategoryCards() {
           Shop Perfumes & Footwear Online in Bangladesh
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.title}

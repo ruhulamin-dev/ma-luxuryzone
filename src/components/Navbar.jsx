@@ -256,9 +256,10 @@ export default function Navbar() {
                 onMouseEnter={() => setClothingOpen(true)}
                 onMouseLeave={() => setClothingOpen(false)}
               >
-                <button
+                <Link
+                  to="/clothing"
                   className={
-                    'relative flex items-center gap-1 px-4 py-2 text-[11px] lg:text-[12px] tracking-[2.5px] uppercase font-semibold transition-all duration-300 bg-transparent border-none cursor-pointer group ' +
+                    'relative flex items-center gap-1 px-4 py-2 text-[11px] lg:text-[12px] tracking-[2.5px] uppercase font-semibold transition-all duration-300 no-underline group ' +
                     (isClothingActive
                       ? 'text-gold'
                       : 'text-white/65 hover:text-gold/70')
@@ -285,7 +286,7 @@ export default function Navbar() {
                       (isClothingActive ? 'w-3/4' : 'w-0 group-hover:w-3/4')
                     }
                   />
-                </button>
+                </Link>
 
                 <AnimatePresence>
                   {clothingOpen && (

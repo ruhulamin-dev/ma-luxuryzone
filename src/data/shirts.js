@@ -20,7 +20,7 @@ const shirts = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: 'Full sleeve shirt',
     images: ['/shirt3-img1.jpg', '/shirt3-img2.jpg'],
     sizes: [
