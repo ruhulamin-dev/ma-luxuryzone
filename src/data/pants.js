@@ -16,7 +16,7 @@ const pants = [
     images: ['/pant2-img1.jpg', '/pant2-img2.jpg'],
     sizes: [
       { label: 'M', price: '৳6,50' },
-      { label: 'L', price: '৳6,500' },
+      { label: 'L', price: '৳6,50' },
       { label: 'XL', price: '৳6,50' },
       { label: 'XXL', price: '৳6,50' },
     ],
