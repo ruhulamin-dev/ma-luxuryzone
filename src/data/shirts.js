@@ -4,9 +4,9 @@ const shirts = [
     name: 'Full Sleeve Shirt',
     images: ['/shirt1-img1.jpg', '/shirt1-img2.jpg'],
     sizes: [
-      { label: 'M', price: '৳7,50' },
-      { label: 'L', price: '৳7,50' },
-      { label: 'XL', price: '৳7,50' },
+      { label: 'M', price: '৳8,00' },
+      { label: 'L', price: '৳8,00' },
+      { label: 'XL', price: '৳8,00' },
     ],
   },
   {
@@ -14,9 +14,9 @@ const shirts = [
     name: 'Full Sleeve Shirt',
     images: ['/shirt2-img1.jpg', '/shirt2-img2.jpg'],
     sizes: [
-      { label: 'M', price: '৳7,50' },
-      { label: 'L', price: '৳7,50' },
-      { label: 'XL', price: '৳7,50' },
+      { label: 'M', price: '৳8,00' },
+      { label: 'L', price: '৳8,00' },
+      { label: 'XL', price: '৳8,00' },
     ],
   },
   {
@@ -24,9 +24,9 @@ const shirts = [
     name: 'Full Sleeve Shirt',
     images: ['/shirt3-img1.jpg', '/shirt3-img2.jpg'],
     sizes: [
-      { label: 'M', price: '৳7,50' },
-      { label: 'L', price: '৳7,50' },
-      { label: 'XL', price: '৳7,50' },
+      { label: 'M', price: '৳8,00' },
+      { label: 'L', price: '৳8,00' },
+      { label: 'XL', price: '৳8,00' },
     ],
   },
   {
@@ -97,6 +97,26 @@ const shirts = [
       { label: 'M', price: '৳4,50' },
       { label: 'L', price: '৳4,50' },
       { label: 'XL', price: '৳4,50' },
+    ],
+  },
+  {
+    id: 11,
+    name: 'Polo T-shirt',
+    images: ['/shirt11-img1.jpg', '/shirt11-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳5,50' },
+      { label: 'L', price: '৳5,50' },
+      { label: 'XL', price: '৳5,50' },
+    ],
+  },
+  {
+    id: 12,
+    name: 'Polo T-shirt',
+    images: ['/shirt12-img1.jpg', '/shirt12-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳6,50' },
+      { label: 'L', price: '৳6,50' },
+      { label: 'XL', price: '৳6,50' },
     ],
   },
 ];
