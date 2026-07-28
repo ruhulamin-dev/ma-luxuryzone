@@ -43,6 +43,26 @@ const pants = [
       { label: 'XXL', price: '৳8,50' },
     ],
   },
+  {
+    id: 5,
+    name: 'Semi Baggy Jeans Pant',
+    images: ['/pant5-img1.jpg', '/pant5-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳9,50' },
+      { label: 'L', price: '৳9,50' },
+      { label: 'XL', price: '৳9,50' },
+    ],
+  },
+  {
+    id: 6,
+    name: 'White Semi Baggy Jeans Pant',
+    images: ['/pant6-img1.jpg', '/pant6-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳9,00' },
+      { label: 'L', price: '৳9,00' },
+      { label: 'XL', price: '৳9,00' },
+    ],
+  },
 ];
 
 export default pants;
