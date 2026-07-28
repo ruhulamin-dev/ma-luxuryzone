@@ -1,23 +1,20 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
-import shirts from '../data/shirts';
-import pants from '../data/pants';
 import caps from '../data/caps';
 
 const WHATSAPP_NUMBER = '8801302630223';
 
-const allClothing = [
-  ...shirts.map(item => ({ ...item, id: 'shirt-' + item.id })),
-  ...pants.map(item => ({ ...item, id: 'pant-' + item.id })),
-  ...caps.map(item => ({ ...item, id: 'cap-' + item.id })),
-];
-
 const getBasePrice = product => {
-  if (!product.sizes || product.sizes.length === 0) return 0;
-  const prices = product.sizes.map(size =>
-    Number(String(size.price).replace(/[^0-9.]/g, '')),
-  );
-  return Math.min(...prices);
+  if (product.sizes && product.sizes.length > 0) {
+    const prices = product.sizes.map(size =>
+      Number(String(size.price).replace(/[^0-9.]/g, '')),
+    );
+    return Math.min(...prices);
+  }
+  if (product.price !== undefined) {
+    return Number(String(product.price).replace(/[^0-9.]/g, ''));
+  }
+  return 0;
 };
 
 const SORT_OPTIONS = [
@@ -26,7 +23,7 @@ const SORT_OPTIONS = [
   { value: 'high-to-low', label: 'Price: High to Low' },
 ];
 
-export default function Clothing() {
+export default function Caps() {
   const [sortOrder, setSortOrder] = useState('default');
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -41,8 +38,8 @@ export default function Clothing() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const sortedClothing = useMemo(() => {
-    const list = [...allClothing];
+  const sortedCaps = useMemo(() => {
+    const list = [...caps];
     if (sortOrder === 'low-to-high') {
       list.sort((a, b) => getBasePrice(a) - getBasePrice(b));
     } else if (sortOrder === 'high-to-low') {
@@ -59,13 +56,13 @@ export default function Clothing() {
         <div className="flex items-center gap-4 mb-4 justify-center">
           <div className="flex-1 h-px bg-gold/20 max-w-[60px]" />
           <span className="text-[10px] tracking-[3px] uppercase text-gold">
-            Our Collection
+            Caps Collection
           </span>
           <div className="flex-1 h-px bg-gold/20 max-w-[60px]" />
         </div>
 
         <h2 className="font-cormorant font-light text-3xl sm:text-4xl lg:text-6xl text-center text-white mb-10 sm:mb-14 lg:mb-16">
-          Premium Clothing
+          Premium Caps
         </h2>
 
         <div className="flex justify-end mb-6">
@@ -107,7 +104,7 @@ export default function Clothing() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {sortedClothing.map(product => (
+          {sortedCaps.map(product => (
             <ProductCard
               key={product.id}
               product={product}

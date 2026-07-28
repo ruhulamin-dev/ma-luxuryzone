@@ -119,6 +119,76 @@ const shirts = [
       { label: 'XL', price: '৳6,50' },
     ],
   },
+  {
+    id: 13,
+    name: 'Black Polo (Ralph Lauren)',
+    images: ['/shirt13-img1.jpg', '/shirt13-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳6,50' },
+      { label: 'L', price: '৳6,50' },
+      { label: 'XL', price: '৳6,50' },
+    ],
+  },
+  {
+    id: 14,
+    name: 'Navy Blue Polo (Ralph Lauren)',
+    images: ['/shirt14-img1.jpg', '/shirt14-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳6,50' },
+      { label: 'L', price: '৳6,50' },
+      { label: 'XL', price: '৳6,50' },
+    ],
+  },
+  {
+    id: 15,
+    name: 'LV Drop Shoulder',
+    images: ['/shirt15-img1.jpg', '/shirt15-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳8,00' },
+      { label: 'L', price: '৳8,00' },
+      { label: 'XL', price: '৳8,00' },
+    ],
+  },
+  {
+    id: 16,
+    name: 'Polo T-shirt (Ralph Lauren)',
+    images: ['/shirt16-img1.jpg', '/shirt16-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳6,50' },
+      { label: 'L', price: '৳6,50' },
+      { label: 'XL', price: '৳6,50' },
+    ],
+  },
+  {
+    id: 17,
+    name: 'Navy Blue Polo (Ralph Lauren)',
+    images: ['/shirt17-img1.jpg', '/shirt17-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳6,50' },
+      { label: 'L', price: '৳6,50' },
+      { label: 'XL', price: '৳6,50' },
+    ],
+  },
+  {
+    id: 18,
+    name: 'Dior black Drop Shoulder',
+    images: ['/shirt18-img1.jpg', '/shirt18-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳7,50' },
+      { label: 'L', price: '৳7,50' },
+      { label: 'XL', price: '৳7,50' },
+    ],
+  },
+  {
+    id: 19,
+    name: 'Dior White Drop Shoulder',
+    images: ['/shirt19-img1.jpg', '/shirt19-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳7,50' },
+      { label: 'L', price: '৳7,50' },
+      { label: 'XL', price: '৳7,50' },
+    ],
+  },
 ];
 
 export default shirts;

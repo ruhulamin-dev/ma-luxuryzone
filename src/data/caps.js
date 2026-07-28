@@ -1,0 +1,130 @@
+const caps = [
+  {
+    id: 1,
+    name: 'Rafael Nadal Bull Logo Corduroy Two-Tone Baseball Cap',
+    images: ['/cap1-img1.jpg', '/cap1-img2.jpg'],
+    price: '৳350',
+  },
+  {
+    id: 2,
+    name: 'Navy & Grey Two-Tone Embroidered Wing Logo Baseball Cap',
+    images: ['/cap2-img1.jpg', '/cap2-img2.jpg'],
+    price: '৳400',
+  },
+  {
+    id: 3,
+    name: 'White & Brown Two-Tone Embroidered X Logo Baseball Cap',
+    images: ['/cap3-img1.jpg', '/cap3-img2.jpg'],
+    price: '৳300',
+  },
+  {
+    id: 4,
+    name: 'Off-White & Brown Two-Tone NY Embroidered Baseball Cap',
+    images: ['/cap4-img1.jpg', '/cap4-img2.jpg'],
+    price: '৳300',
+  },
+  {
+    id: 5,
+    name: 'Navy & Grey Two-Tone #10 Number Embroidered Baseball Cap',
+    images: ['/cap5-img1.jpg', '/cap5-img2.jpg'],
+    price: '৳400',
+  },
+  {
+    id: 6,
+    name: 'Dark Green & Black Two-Tone Corduroy Wing Logo Baseball Cap',
+    images: ['/cap6-img1.jpg', '/cap6-img2.jpg'],
+    price: '৳350',
+  },
+  {
+    id: 7,
+    name: 'Navy Blue Corduroy #99 Number Embroidered Baseball Cap',
+    images: ['/cap7-img1.jpg', '/cap7-img2.jpg'],
+    price: '৳350',
+  },
+  {
+    id: 8,
+    name: 'Black Grid Pattern Embroidered Spartan Helmet Logo Baseball Cap',
+    images: ['/cap8-img1.jpg', '/cap8-img2.jpg'],
+    price: '৳400',
+  },
+  {
+    id: 9,
+    name: 'White & Black Two-Tone Geometric M Logo Baseball Cap',
+    images: ['/cap9-img1.jpg', '/cap9-img2.jpg'],
+    price: '৳300',
+  },
+  {
+    id: 10,
+    name: 'GYOUFU Leather Patch Baseball Cap',
+    images: ['/cap10-img1.jpg', '/cap10-img2.jpg'],
+    price: '৳300',
+  },
+  {
+    id: 11,
+    name: 'Red & Black Lorenzo #99 Racing Embroidered Baseball Cap',
+    images: ['/cap11-img1.jpg', '/cap11-img2.jpg'],
+    price: '৳350',
+  },
+  {
+    id: 12,
+    name: 'Black & Mustard Yellow Two-Tone Corduroy Embroidered Wing Logo Baseball Cap',
+    images: ['/cap12-img1.jpg', '/cap12-img2.jpg'],
+    price: '৳350',
+  },
+  {
+    id: 13,
+    name: 'Black Corduroy Embroidered LV Initial Logo Baseball Cap',
+    images: ['/cap13-img1.jpg', '/cap13-img2.jpg'],
+    price: '৳350',
+  },
+  {
+    id: 14,
+    name: 'Brown & Black Two-Tone Corduroy Embroidered Wing Logo Baseball Cap',
+    images: ['/cap14-img1.jpg', '/cap14-img2.jpg'],
+    price: '৳350',
+  },
+  {
+    id: 15,
+    name: 'Black Corduroy Embroidered Adidas Logo Baseball Cap',
+    images: ['/cap15-img1.jpg', '/cap15-img2.jpg'],
+    price: '৳350',
+  },
+  {
+    id: 16,
+    name: 'White & Brown Two-Tone Mercedes-Benz Logo Baseball Cap',
+    images: ['/cap16-img1.jpg', '/cap16-img2.jpg'],
+    price: '৳300',
+  },
+  {
+    id: 17,
+    name: 'Brown Suede #10 Number Embroidered Two-Tone Baseball Cap',
+    images: ['/cap17-img1.jpg', '/cap17-img2.jpg'],
+    price: '৳350',
+  },
+  {
+    id: 18,
+    name: 'Black & Red Two-Tone Embroidered X Logo Baseball Cap',
+    images: ['/cap18-img1.jpg', '/cap18-img2.jpg'],
+    price: '৳400',
+  },
+  {
+    id: 19,
+    name: 'Brown Suede #10 Number Embroidered Two-Tone Baseball Cap',
+    images: ['/cap19-img1.jpg', '/cap19-img2.jpg'],
+    price: '৳400',
+  },
+  {
+    id: 20,
+    name: 'Beige Corduroy Embroidered Dope Lettering Baseball Cap',
+    images: ['/cap20-img1.jpg', '/cap20-img2.jpg'],
+    price: '৳350',
+  },
+  {
+    id: 21,
+    name: 'Navy & Grey Two-Tone Embroidered Star Logo Baseball Cap',
+    images: ['/cap21-img1.jpg', '/cap21-img2.jpg'],
+    price: '৳400',
+  },
+];
+
+export default caps;

@@ -6,6 +6,11 @@ export default function ProductCard({ product, whatsappNumber }) {
   const [selectedSize, setSelectedSize] = useState(0);
   const [lightbox, setLightbox] = useState(null);
 
+  const hasSizes = Array.isArray(product.sizes) && product.sizes.length > 0;
+  const currentPrice = hasSizes
+    ? product.sizes[selectedSize].price
+    : product.price;
+
   const prevImg = () => {
     setImgIndex(prev => (prev === 0 ? product.images.length - 1 : prev - 1));
   };
@@ -13,6 +18,10 @@ export default function ProductCard({ product, whatsappNumber }) {
   const nextImg = () => {
     setImgIndex(prev => (prev === product.images.length - 1 ? 0 : prev + 1));
   };
+
+  const orderText = hasSizes
+    ? `আসসালামু আলাইকুম। আমি ${product.name} (${product.sizes[selectedSize].label}) ${product.sizes[selectedSize].price} অর্ডার করতে চাই। ধন্যবাদ!`
+    : `আসসালামু আলাইকুম। আমি ${product.name} ${product.price} অর্ডার করতে চাই। ধন্যবাদ!`;
 
   return (
     <>
@@ -40,7 +49,6 @@ export default function ProductCard({ product, whatsappNumber }) {
             />
           </AnimatePresence>
 
-          {/* Arrows */}
           <button
             onClick={prevImg}
             className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center border border-gold/30 bg-black/60 text-gold hover:bg-gold hover:text-black transition-all duration-300 z-10"
@@ -77,7 +85,6 @@ export default function ProductCard({ product, whatsappNumber }) {
             </svg>
           </button>
 
-          {/* Dots */}
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
             {product.images.map((_, i) => (
               <button
@@ -97,55 +104,68 @@ export default function ProductCard({ product, whatsappNumber }) {
           <h3 className="font-cormorant text-lg sm:text-xl text-white mb-1">
             {product.name}
           </h3>
-          <p className="text-[11px] text-white/40 leading-relaxed mb-4">
-            {product.desc}
-          </p>
+          {product.desc && (
+            <p className="text-[11px] text-white/40 leading-relaxed mb-4">
+              {product.desc}
+            </p>
+          )}
 
-          {/* Size Selector */}
-          <div className="grid grid-cols-3 gap-2 mb-4">
-            {product.sizes.map((size, i) => (
-              <button
-                key={i}
-                onClick={() => setSelectedSize(i)}
-                className={
-                  'rounded-sm py-2.5 text-center transition-all duration-300 border cursor-pointer ' +
-                  (selectedSize === i
-                    ? 'border-gold bg-gold text-black'
-                    : 'border-gold/25 bg-transparent hover:border-gold/50')
-                }
-              >
-                <div
+          {/* Size Selector — শুধু sizes থাকলে দেখাবে */}
+          {hasSizes && (
+            <div
+              className={
+                'grid gap-2 mb-4 ' +
+                (product.sizes.length === 4 ? 'grid-cols-4' : 'grid-cols-3')
+              }
+            >
+              {product.sizes.map((size, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSelectedSize(i)}
                   className={
-                    'text-[11px] font-semibold tracking-wide ' +
-                    (selectedSize === i ? 'text-black' : 'text-white/80')
+                    'rounded-sm py-2.5 text-center transition-all duration-300 border cursor-pointer ' +
+                    (selectedSize === i
+                      ? 'border-gold bg-gold text-black'
+                      : 'border-gold/25 bg-transparent hover:border-gold/50')
                   }
                 >
-                  {size.label}
-                </div>
-                <div
-                  className={
-                    'text-[10px] mt-0.5 ' +
-                    (selectedSize === i ? 'text-black/70' : 'text-white/40')
-                  }
-                >
-                  {size.price}
-                </div>
-              </button>
-            ))}
-          </div>
+                  <div
+                    className={
+                      'text-[11px] font-semibold tracking-wide ' +
+                      (selectedSize === i ? 'text-black' : 'text-white/80')
+                    }
+                  >
+                    {size.label}
+                  </div>
+                  <div
+                    className={
+                      'text-[10px] mt-0.5 ' +
+                      (selectedSize === i ? 'text-black/70' : 'text-white/40')
+                    }
+                  >
+                    {size.price}
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Price + Order */}
-          <div className="flex items-center justify-between">
+          <div
+            className={
+              'flex items-center justify-between' + (!hasSizes ? ' mt-1' : '')
+            }
+          >
             <div>
               <div className="text-[10px] text-white/30 uppercase tracking-wider mb-0.5">
                 Price
               </div>
               <div className="text-lg font-semibold text-gold">
-                {product.sizes[selectedSize].price}
+                {currentPrice}
               </div>
             </div>
             <motion.a
-              href={`https://wa.me/${whatsappNumber}?text=আসসালামু আলাইকুম। আমি ${product.name} (${product.sizes[selectedSize].label}) ${product.sizes[selectedSize].price} অর্ডার করতে চাই। ধন্যবাদ!`}
+              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(orderText)}`}
               target="_blank"
               rel="noreferrer"
               whileHover={{ scale: 1.03 }}
