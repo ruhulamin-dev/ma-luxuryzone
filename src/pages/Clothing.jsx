@@ -13,11 +13,16 @@ const allClothing = [
 ];
 
 const getBasePrice = product => {
-  if (!product.sizes || product.sizes.length === 0) return 0;
-  const prices = product.sizes.map(size =>
-    Number(String(size.price).replace(/[^0-9.]/g, '')),
-  );
-  return Math.min(...prices);
+  if (product.sizes && product.sizes.length > 0) {
+    const prices = product.sizes.map(size =>
+      Number(String(size.price).replace(/[^0-9.]/g, '')),
+    );
+    return Math.min(...prices);
+  }
+  if (product.price !== undefined) {
+    return Number(String(product.price).replace(/[^0-9.]/g, ''));
+  }
+  return 0;
 };
 
 const SORT_OPTIONS = [

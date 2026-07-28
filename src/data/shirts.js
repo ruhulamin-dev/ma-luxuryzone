@@ -189,6 +189,16 @@ const shirts = [
       { label: 'XL', price: '৳7,50' },
     ],
   },
+  {
+    id: 20,
+    name: 'LV Drop Shoulder',
+    images: ['/shirt20-img1.jpg', '/shirt20-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳8,00' },
+      { label: 'L', price: '৳8,00' },
+      { label: 'XL', price: '৳8,00' },
+    ],
+  },
 ];
 
 export default shirts;
