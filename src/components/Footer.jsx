@@ -29,9 +29,10 @@ export default function Footer() {
             </div>
           </button>
           <p className="text-[12px] text-white/35 leading-[1.9] max-w-[280px] mb-6 mt-4">
-            M.A Luxury Zone brings you authentic Dubai perfumes and premium
-            footwear, delivered across Bangladesh with fast shipping and
-            guaranteed quality.
+            M.A Luxury Zone brings you Authentic Dubai perfumes, premium
+            footwear, and stylish fashion essentials crafted for elegance and
+            confidence. Experience luxury, delivered to your door across
+            Bangladesh.
           </p>
           <div className="flex gap-3">
             <a

@@ -33,19 +33,19 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-3 bg-white/5 border border-gold/20 px-4 py-2 rounded-full text-[9px] sm:text-[10px] tracking-[2px] sm:tracking-[3px] uppercase text-gold mb-6 sm:mb-8">
             <span className="text-[6px]">◆</span>
-            Perfumes & Footwear Collection
+            Perfumes, Footwear & Fashion Collection
           </div>
 
           <h1 className="font-cormorant font-light text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] text-white mb-4 sm:mb-6">
             Discover Premium
             <br />
-            Dubai Fragrances & Footwear
+            Dubai Fragrances & Fashion
           </h1>
 
           <p className="text-xs sm:text-sm text-white/50 leading-[1.9] max-w-md mb-8 sm:mb-10 tracking-[0.5px] mx-auto lg:mx-0">
-            Authentic Dubai perfumes and premium footwear crafted for elegance
-            and confidence. Experience luxury, delivered to your door across
-            Bangladesh.
+            Authentic Dubai perfumes, premium footwear, and stylish fashion
+            essentials crafted for elegance and confidence. Experience luxury,
+            delivered to your door across Bangladesh.
           </p>
 
           <div className="flex gap-3 sm:gap-4 flex-wrap justify-center lg:justify-start">
@@ -169,6 +169,21 @@ export default function Hero() {
                 </svg>
                 <span className="text-gold/70 text-[7px] sm:text-[8px] tracking-[0.5px] uppercase">
                   Footwear
+                </span>
+              </div>
+              <div className="flex items-center gap-1 border border-gold/25 rounded-full px-2 sm:px-2.5 py-1">
+                <svg
+                  width="9"
+                  height="9"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#C9A96E"
+                  strokeWidth="2"
+                >
+                  <path d="M4 4l4-1 4 3 4-3 4 1v4l-3 1v11H7V9L4 8z" />
+                </svg>
+                <span className="text-gold/70 text-[7px] sm:text-[8px] tracking-[0.5px] uppercase">
+                  Fashion
                 </span>
               </div>
             </div>
