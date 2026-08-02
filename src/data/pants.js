@@ -1,7 +1,7 @@
 const pants = [
   {
     id: 1,
-    name: 'LV Low Cut Baggy Pant (Black Colour )',
+    name: 'LV Low Cut Baggy Pant (Black Colour)',
     images: ['/pant1-img1.jpg', '/pant1-img2.jpg'],
     sizes: [
       { label: 'M', price: '৳7,50' },
@@ -61,6 +61,17 @@ const pants = [
       { label: 'M', price: '৳9,00' },
       { label: 'L', price: '৳9,00' },
       { label: 'XL', price: '৳9,00' },
+    ],
+  },
+  {
+    id: 7,
+    name: 'LV Low Cut Baggy Pant (Brown Colour)',
+    images: ['/pant7-img1.jpg', '/pant7-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳7,50' },
+      { label: 'L', price: '৳7,50' },
+      { label: 'XL', price: '৳7,50' },
+      { label: 'XXL', price: '৳7,50' },
     ],
   },
 ];

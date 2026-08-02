@@ -99,6 +99,7 @@ export default function Footer() {
               { label: 'Home', path: '/' },
               { label: 'Perfumes', path: '/perfumes' },
               { label: 'Shoes', path: '/shoes' },
+              { label: 'Clothing', path: '/clothing' },
               { label: 'Contact', path: '/contact' },
             ].map(link => (
               <li key={link.path}>
