@@ -31,7 +31,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center lg:text-left order-2 lg:order-1"
         >
-          <div className="inline-flex items-center gap-3 bg-white/5 border border-gold/20 px-4 py-2 rounded-full text-[9px] sm:text-[10px] tracking-[2px] sm:tracking-[3px] uppercase text-gold mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/5 border border-gold/20 px-3 sm:px-4 py-2 rounded-full text-[7px] sm:text-[10px] tracking-[1px] sm:tracking-[3px] uppercase text-gold mb-6 sm:mb-8 whitespace-nowrap">
             <span className="text-[6px]">◆</span>
             Perfumes, Footwear & Fashion Collection
           </div>
@@ -87,10 +87,10 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="relative flex items-center justify-center h-[300px] sm:h-[400px] lg:h-[520px] order-1 lg:order-2"
+          className="relative flex items-center justify-center h-[340px] sm:h-[420px] lg:h-[520px] order-1 lg:order-2"
         >
           {/* Orbit rings */}
-          <div className="absolute w-[280px] sm:w-[380px] lg:w-[440px] h-[280px] sm:h-[380px] lg:h-[440px] border border-gold/[0.08] rounded-full animate-orbit">
+          <div className="absolute w-[300px] sm:w-[380px] lg:w-[440px] h-[300px] sm:h-[380px] lg:h-[440px] border border-gold/[0.08] rounded-full animate-orbit">
             <div
               className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1 w-2 h-2 bg-gold rounded-full"
               style={{ boxShadow: '0 0 10px #C9A96E' }}
@@ -109,7 +109,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="relative z-10 flex flex-col items-center justify-center w-[160px] sm:w-[220px] lg:w-[260px] h-[190px] sm:h-[260px] lg:h-[300px] px-4"
+            className="relative z-10 flex flex-col items-center justify-center w-[170px] sm:w-[230px] lg:w-[260px] h-[230px] sm:h-[280px] lg:h-[300px] px-4 py-4"
             style={{
               background:
                 'linear-gradient(135deg, rgba(201,169,110,0.1) 0%, rgba(20,16,8,0.92) 45%, rgba(201,169,110,0.05) 75%, rgba(201,169,110,0.15) 100%)',
@@ -140,8 +140,8 @@ export default function Hero() {
             </div>
 
             {/* Category tags */}
-            <div className="flex items-center gap-1.5 sm:gap-2 mb-1 flex-wrap justify-center">
-              <div className="flex items-center gap-1 border border-gold/25 rounded-full px-2 sm:px-2.5 py-1">
+            <div className="flex items-center gap-1 sm:gap-2 mb-1 flex-wrap justify-center px-1">
+              <div className="flex items-center gap-1 border border-gold/25 rounded-full px-1.5 sm:px-2.5 py-1">
                 <svg
                   width="9"
                   height="9"
@@ -156,7 +156,7 @@ export default function Hero() {
                   Perfumes
                 </span>
               </div>
-              <div className="flex items-center gap-1 border border-gold/25 rounded-full px-2 sm:px-2.5 py-1">
+              <div className="flex items-center gap-1 border border-gold/25 rounded-full px-1.5 sm:px-2.5 py-1">
                 <svg
                   width="9"
                   height="9"
@@ -171,7 +171,7 @@ export default function Hero() {
                   Footwear
                 </span>
               </div>
-              <div className="flex items-center gap-1 border border-gold/25 rounded-full px-2 sm:px-2.5 py-1">
+              <div className="flex items-center gap-1 border border-gold/25 rounded-full px-1.5 sm:px-2.5 py-1">
                 <svg
                   width="9"
                   height="9"
