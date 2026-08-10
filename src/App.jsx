@@ -1,8 +1,11 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import ReactGA from 'react-ga4';
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
+
 import Home from './pages/Home';
 import Perfumes from './pages/Perfumes';
 import Shoes from './pages/Shoes';
@@ -16,9 +19,17 @@ import Contact from './pages/Contact';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Google Analytics page view
+    ReactGA.send({
+      hitType: 'pageview',
+      page: pathname,
+    });
   }, [pathname]);
+
   return null;
 }
 
@@ -26,7 +37,9 @@ function App() {
   return (
     <div className="bg-[#0A0A0A] text-white overflow-x-hidden">
       <ScrollToTop />
+
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/perfumes" element={<Perfumes />} />
@@ -39,6 +52,7 @@ function App() {
         <Route path="/clothing/caps" element={<Caps />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
       <Footer />
       <WhatsAppFloat />
     </div>
