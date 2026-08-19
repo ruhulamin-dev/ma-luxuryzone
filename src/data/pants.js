@@ -26,10 +26,10 @@ const pants = [
     name: 'Navy Blue Semi Baggy Joggers (Essential)',
     images: ['/pant3-img1.jpg', '/pant3-img2.jpg'],
     sizes: [
-      { label: 'M', price: '৳6,50' },
-      { label: 'L', price: '৳6,50' },
-      { label: 'XL', price: '৳6,50' },
-      { label: 'XXL', price: '৳6,50' },
+      { label: 'M', price: '৳8,50' },
+      { label: 'L', price: '৳8,50' },
+      { label: 'XL', price: '৳8,50' },
+      { label: 'XXL', price: '৳8,50' },
     ],
   },
   {
@@ -72,6 +72,39 @@ const pants = [
       { label: 'L', price: '৳7,50' },
       { label: 'XL', price: '৳7,50' },
       { label: 'XXL', price: '৳7,50' },
+    ],
+  },
+  {
+    id: 8,
+    name: 'Korean Formal Baggy Pant (White Colour)',
+    images: ['/pant8-img1.jpg', '/pant8-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳1,000' },
+      { label: 'L', price: '৳1,000' },
+      { label: 'XL', price: '৳1,000' },
+      { label: 'XXL', price: '৳1,000' },
+    ],
+  },
+  {
+    id: 9,
+    name: 'Korean Formal Baggy Pant (Black Colour)',
+    images: ['/pant9-img1.jpg', '/pant9-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳1,000' },
+      { label: 'L', price: '৳1,000' },
+      { label: 'XL', price: '৳1,000' },
+      { label: 'XXL', price: '৳1,000' },
+    ],
+  },
+  {
+    id: 10,
+    name: 'Korean Formal Baggy Pant (Biscuit Colour)',
+    images: ['/pant10-img1.jpg', '/pant10-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳1,000' },
+      { label: 'L', price: '৳1,000' },
+      { label: 'XL', price: '৳1,000' },
+      { label: 'XXL', price: '৳1,000' },
     ],
   },
 ];
