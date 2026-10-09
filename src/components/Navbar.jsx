@@ -340,7 +340,7 @@ export default function Navbar() {
                       </Link>
                       <Link
                         to="/clothing/caps"
-                        className="flex items-center gap-3 px-5 py-3.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/65 hover:text-gold hover:bg-gold/5 transition-all duration-200 no-underline"
+                        className="flex items-center gap-3 px-5 py-3.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/65 hover:text-gold hover:bg-gold/5 transition-all duration-200 no-underline border-b border-gold/10"
                       >
                         <svg
                           width="14"
@@ -356,6 +356,25 @@ export default function Navbar() {
                           <path d="M4 12h16" />
                         </svg>
                         Caps
+                      </Link>
+                      <Link
+                        to="/clothing/kids"
+                        className="flex items-center gap-3 px-5 py-3.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/65 hover:text-gold hover:bg-gold/5 transition-all duration-200 no-underline"
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <circle cx="12" cy="7" r="3" />
+                          <path d="M6 21v-4a6 6 0 0 1 12 0v4" />
+                        </svg>
+                        Kids
                       </Link>
                     </motion.div>
                   )}
@@ -698,6 +717,26 @@ export default function Navbar() {
                               <path d="M4 12h16" />
                             </svg>
                             Caps
+                          </Link>
+                          <Link
+                            to="/clothing/kids"
+                            onClick={() => setMenuOpen(false)}
+                            className="flex items-center gap-2 py-2.5 text-[11px] tracking-[2px] uppercase font-semibold text-white/60 hover:text-yellow-400 transition-colors no-underline"
+                          >
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <circle cx="12" cy="7" r="3" />
+                              <path d="M6 21v-4a6 6 0 0 1 12 0v4" />
+                            </svg>
+                            Kids
                           </Link>
                         </div>
                       </motion.div>

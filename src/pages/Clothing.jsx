@@ -3,6 +3,7 @@ import ProductCard from '../components/ProductCard';
 import shirts from '../data/shirts';
 import pants from '../data/pants';
 import caps from '../data/caps';
+import kids from '../data/kids';
 
 const WHATSAPP_NUMBER = '8801302630223';
 
@@ -10,6 +11,7 @@ const allClothing = [
   ...shirts.map(item => ({ ...item, id: 'shirt-' + item.id })),
   ...pants.map(item => ({ ...item, id: 'pant-' + item.id })),
   ...caps.map(item => ({ ...item, id: 'cap-' + item.id })),
+  ...kids.map(item => ({ ...item, id: 'kids-' + item.id })),
 ];
 
 const getBasePrice = product => {

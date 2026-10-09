@@ -12,6 +12,7 @@ import Clothing from './pages/Clothing';
 import Shirts from './pages/Shirts';
 import Pants from './pages/Pants';
 import Caps from './pages/Caps';
+import Kids from './pages/Kids';
 import Contact from './pages/Contact';
 
 function ScrollToTop() {
@@ -37,6 +38,7 @@ function App() {
         <Route path="/clothing/shirts" element={<Shirts />} />
         <Route path="/clothing/pants" element={<Pants />} />
         <Route path="/clothing/caps" element={<Caps />} />
+        <Route path="/clothing/kids" element={<Kids />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

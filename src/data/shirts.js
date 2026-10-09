@@ -199,6 +199,46 @@ const shirts = [
       { label: 'XL', price: '৳8,00' },
     ],
   },
+  {
+    id: 21,
+    name: 'Adidas Drop shoulder T-shirt',
+    images: ['/shirt21-img1.jpg', '/shirt21-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳9,99' },
+      { label: 'L', price: '৳9,99' },
+      { label: 'XL', price: '৳9,99' },
+    ],
+  },
+  {
+    id: 22,
+    name: 'Adidas Drop shoulder T-shirt',
+    images: ['/shirt22-img1.jpg', '/shirt22-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳9,99' },
+      { label: 'L', price: '৳9,99' },
+      { label: 'XL', price: '৳9,99' },
+    ],
+  },
+  {
+    id: 23,
+    name: 'Adidas Drop shoulder T-shirt',
+    images: ['/shirt23-img1.jpg', '/shirt23-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳9,99' },
+      { label: 'L', price: '৳9,99' },
+      { label: 'XL', price: '৳9,99' },
+    ],
+  },
+  {
+    id: 24,
+    name: 'Adidas Drop shoulder T-shirt',
+    images: ['/shirt24-img1.jpg', '/shirt24-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳9,99' },
+      { label: 'L', price: '৳9,99' },
+      { label: 'XL', price: '৳9,99' },
+    ],
+  },
 ];
 
 export default shirts;
