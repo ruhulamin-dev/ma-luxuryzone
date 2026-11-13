@@ -107,6 +107,16 @@ const pants = [
       { label: 'XXL', price: '৳1,000' },
     ],
   },
+  {
+    id: 11,
+    name: 'Premium Joggers',
+    images: ['/pant11-img1.jpg', '/pant11-img2.jpg'],
+    sizes: [
+      { label: 'M', price: '৳1,500' },
+      { label: 'L', price: '৳1,500' },
+      { label: 'XL', price: '৳1,500' },
+    ],
+  },
 ];
 
 export default pants;
